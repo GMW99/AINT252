@@ -96,3 +96,68 @@ Normalisation referees to normalising the data dimensions so that they are appro
     \item normalised each dimension so that the min and max along the dimension is -1 and 1 respectively
 \end{enumerate}
 It only makes sense to apply this pre-processing if you have a reason to believe that different input features have different scales, but thy should be approximately equal importance to the learning algorithm. In the cases of images the relative scales of pixels are already approximately equal, so it is not strictly necessary to perform this addition pre-processing step.
+\subsection{Dimensionality reduction: Principal Component Analysis (PCA)} 
+Principal components analysis is a quantitatively rigorous method for achieving data simplification and dimensionality reduction. The method generates a new set of variables, called principal components.  Each principal component is a linear combination of the original variables. All the principal components are orthogonal to each other, so there is no redundant information. The principal components as a whole form an orthogonal basis for the space of the data.
+\begin{enumerate}
+    \item The first principal component is a single axis in space. When you project each observation on that axis, the resulting values form a new variable. The variance of this variable is the maximum among all possible choices of the first axis. 
+    \item The second principal component is another axis in space, perpendicular to the first. Projecting the observations on this axis generates another new variable. The variance of this variable is the maximum among all possible choices of this second axis.
+    \item The full set of principal components is as large as the original set of variables. But it is a common place for the sum of the variances of the first few principal components to exceed 80\% of the total variance of the original data. 
+\end{enumerate}
+\subsection{Classify images}
+The problem is very simple for natural intelligence, but very challenging for the AI. Recent Google developments of Convolutional Neural Networks (CNN) allow to the solve this problem and classify images with a small amount of error
+\subsection{Binary (two classes) classification}
+If we simplify the image problem down to dots on a 2-dimensional plane and would like to classify them, the idea would be to find the separator between the two classes the simplest separator is a straight line. 
+\subsection{Linear Regression}
+Regression is the task of predicting real valued quantities. For this type of task, it is common to compute the error function between the predicted quantity and  the true answer, the error function includes both data and parameters. Minimization of the error function provides optimal parameter values.
+\subsubsection{Least squares}
+Linear regression line is the line of best fit: the sum of squared distances from the data point to the line is the smallest ( least squares).
+\\\\
+This is niavie and simple approach however it shows a typical approach to the construction of an AI algorithm.
+\begin{itemize}
+    \item Define an error function, which includes data and parameters
+    \item Find min/max of this function according to the parameter variation (a training data set is given and fixed)
+    \item Optimization procedure provides the optimal parameter values which define the best classifier for the given training set.
+\end{itemize}
+The solution of this optimization problem (i.e. the parameter values corresponding to the global minimum or some point nearby) is the best set of parameter values for the classifier
+\subsection{Numerical optimization}
+There two main numerical methods to solve the optimization problem 
+\subsubsection{Gradient descent}
+The vector gradient is defined as
+\begin{equation}
+    \nabla f = \Big(\frac{\delta f}{\delta x}, \frac{\delta f}{\delta y} \Big)^T
+\end{equation}
+Gradient descent uses just the gradient of the function to navigate to the minimum. From
+calculus, the direction of − $\nabla$ f is that of maximum change of the function. The gradient descent uses - $\nabla$ f (the down-gradient direction) as an estimate of the direction of the minimum
+\subsubsubsection{Multivariable calculus: gradient}
+The gradient is a vector having direction equal to the greatest rate of increase, and magnitude equal to the slope of the function in that direction.
+\begin{itemize}
+    \item  The Jacobian Matrix is defined for scalar-valued functions (functions with a single output), whereas for vector-valued functions it is necessary to use the Jacobian matrix.
+\end{itemize}
+\subsubsection{Higher dimensional Newton-Raphson}
+In cases where the first derivative $f'(x)$ is well behaved in the region of the root, we can used the Newton-Raphson method to compute the root. 
+\begin{equation}
+    X_{n+1} = X_n - J^{-1}(X_n)F(X_n)
+\end{equation}
+\subsubsubsection{Example}
+Consider finding the roots of the two functions
+$$
+    f(x,y) = 9- x^4-y^4
+$$
+$$
+    g(x,y) = x^2-2y+2
+$$
+Starting at
+$$
+    x_0 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}
+$$
+The Jacobian is 
+$$
+    \begin{pmatrix} \frac{\delta f}{\delta x} & \frac{\delta f}{\delta y} \\ \frac{\delta g}{\delta x} & \frac{\delta g}{\delta y} \end{pmatrix} = \begin{pmatrix} -4x^3 & -4y^3 \\ 2x & -2 \end{pmatrix}
+$$
+The first step of the 2D Newton-Raphson method is:
+\begin{equation*}
+    X_{1} = X_0 - J^{-1}(X_0)F(X_0)
+\end{equation*}
+\begin{equation*}
+   \begin{pmatrix} x_1 \\ y_1 \end{pmatrix} =  \begin{pmatrix} 1 \\ 1 \end{pmatrix} - \frac{1}{8} \begin{pmatrix} -1 & 2 \\ -1 & -2 \end{pmatrix}\begin{pmatrix} 7 \\ 1 \end{pmatrix} = \begin{pmatrix} 1.625 \\ 2.125 \end{pmatrix}
+\end{equation*}
