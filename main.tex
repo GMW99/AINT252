@@ -1,14 +1,28 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{minitoc}
+\usepackage{algpseudocode,algorithm,algorithmicx}
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+\algrenewcommand\algorithmicrequire{\textbf{Precondition:}}
+\algrenewcommand\algorithmicensure{\textbf{Postcondition:}}
 \title{AINT252}
-\author{gabryelmw }
+\author{Gabryel Mason-Williams }
 \date{February 2019}
 
 \begin{document}
-
+\def\layersep{2.5cm}
 \maketitle
+\begin{abstract}
+    This document contains my lectures notes based on the series of lecutures in the AINT252 module given by lectures at The University of Plymouth 
+\end{abstract}
+\newpage
+\dominitoc% Initialization
+\tableofcontents
 
-\section{Introduction}
+\newpage
+\input{L1.tex}
+
 
 \end{document}
