@@ -117,16 +117,16 @@ The silhouette value ranges from -1 to +1, a high silhouette value for point $i$
 It is important to notice that this method is extremely sensitive to the initial choice of random centroids, and that it may be a good idea to repeat the process for different initial choices. Also it is possible for some of the centroids not to be closest to any of the points ion the data-set reducing the number of subsets down from k.
 \subsection{K Nearest Neighbour (KNN) Classifier}
 This is a type of instance-based learning, or lazy learning, where the function is only approximated locally and all computation is deferred until classification. The KNN algorithm is among the simplest of all machine learning algorithms. The training examples are vectors in a multidimensional feature space each with a class label. The training phase of the algorithm consists only of storing the feature vectors and class labels of the training samples.  In the classification phase, k is a user-defined constant, and an unlabelled vector (a query or test point) is classified by assigning the label which is most frequent among the k training samples nearest to that query point.
-\subsubsubsection{Algorithm summary}
+\subsubsection{Algorithm summary}
 \begin{itemize}
     \item A positive integer k is specified, along with a new sample
     \item We select the k entries in our database which are closest to the new sample
     \item We find the most common classification of these entries
     \item This is the classification we give the new sample
 \end{itemize}
-\subsubsubsection{Features of KNN}
+\subsubsection{Features of KNN}
 KNN stores the entire training data-set which it uses as its representation, KNN does not learn any model and it makes predictions just-in-time by calculating the similarity between an input sample and each training instance.
-\subsubsubsection{Pros and cons of KNN}
+\subsubsection{Pros and cons of KNN}
 Pros
 \begin{itemize}
     \item No assumptions about data — useful, for example, for nonlinear data
