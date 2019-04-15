@@ -30,10 +30,10 @@ Mean_Second_Col=mean(data(:,2));
 
 %calculate the covariance matrix of data. 
 %The covariance matrix contains all necessary information to rotate the coordinate system.
- C = cov(data1)
+ C = cov(data1);
  
  %Compute the eigenvectors V and eigenvalues  of the covariance matrix 
-[V,D] = eig(C)
+[V,D] = eig(C);
 
 % The rotation helps to create new variables which are uncorrelated,
 % i.e. the covariance is zero for all pairs of the new variables.
