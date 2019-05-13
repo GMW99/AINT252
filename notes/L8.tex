@@ -1,0 +1,111 @@
+\section{Computer Vision}
+Computer Vision is a field that deals with how computers can be made to gain a high level of understanding from images.
+\subsection{Image Processing}
+There are many different ways to process an image as shown below
+\begin{itemize}
+    \item Spatial filtering using Difference of Gaussians
+    \begin{itemize}
+        \item Low-pass 
+        \item Band-pass
+        \item High-pass
+    \end{itemize}
+    \item Illumination gradients
+    \begin{itemize}
+        \item Image differentiation -edges
+        \item Sobel, Canny filters
+    \end{itemize}
+    \item Filtering in time
+    \begin{itemize}
+        \item Motion analysis
+    \end{itemize}
+\end{itemize}
+All of these techniques use convolution 
+\subsubsection{Convolution}
+Convolution is the a mathematical operations on two functions $f$ and $g$ to produce a third function that expresses how the shape of one is modified by the other.
+\\\\
+\textbf{Definition}
+\smallskip
+\hrule
+\bigskip
+The convolution of $w$ and $v$ is written as $w*v$. It is defined as the integral of the product of the two functions are one is reversed and shifted. As such, it is a particular kind of integral transform.\footnote{For more  information about the definition with a visual explanation \href{https://en.wikipedia.org/wiki/Convolution}{(link)}  }
+\[
+(w*v)(x) \triangleq \int_{-\infty}^{\infty} w(\tau)v(x-\tau)d\tau
+\]
+\\
+\subsubsubsection{Discrete Convolution}
+\\\\
+\textbf{Definition}
+\smallskip
+\hrule
+\bigskip
+For complex-valued functions, $f,g$ are defined on the set \mathbb{Z}, the discrete convolution of $f$ and $g$ is given by
+\[
+(f*g)[n] = \sum_{m = -\infty}^{\infty}f[m]g[n-m]
+\]
+or equivalently by
+\[
+(f*g)[n] = \sum_{m = -\infty}^{\infty}f[n-m]g[m]
+\]
+\\
+So in images this method is used as images are represented in the \mathbb{Z} set.\footnote{To see a visual example of this working and a walk through \href{http://www.songho.ca/dsp/convolution/convolution2d_example.html}{(link)}} 
+\subsubsection{Spatial filtering}
+Spatial filtering is an technique for changing the intensities of a pixel according to the intensities of the neighboring pixels.
+\subsubsubsection{Difference of two Gaussians (DoG)}
+This is a symmetric band-pass filter, which removes high frequency components representing noise, and some low frequency components representing the homogeneous areas of the image. The frequency componets in the passing band are assumed to be associated to the edges in the images.
+\\\\
+The first step is to smooth the image by convolution with the Gaussian kernel of certain width ${\sigma_{1}}$
+\[
+G_{\sigma_{1}}(x,y) = \frac{1}{\sqrt{2\pi{\sigma_{1}}}}e^{-\frac{x^2+y^2}{2{\sigma_{1}}^2}}
+\]
+to get
+\[
+g_1(x,y) = G_{\sigma_{1}}(x,y) * f(x,y)
+\]
+with a different width ${\sigma_{2}}$, a second smoothed image can be obtained
+\[
+g_2(x,y) = G_{\sigma_{2}}(x,y) * f(x,y)
+\]
+We can now show that difference in these two Gaussian smoothed images can be used to detect edges in an image.
+
+\[
+g_1(x,y) - g_2(x,y) = G_{\sigma_1} * f(x,y) - G_{\sigma_2} * f(x,y) = (G_{\sigma_1} - G_{\sigma_2} * f(x,y) = DoG*f(x,y).
+\]
+The DoG as an operator is defined as \\\\
+\textbf{Definition}
+\smallskip
+\hrule
+\bigskip
+\[
+DoG \triangleq (G_{\sigma_1} - G_{\sigma_2}) = \frac{1}{\sqrt{2\pi}}\big(\frac{1}{\sigma_1}e^{-\frac{x^2+y^2}{2\sigma_1^2}}- \frac{1}{\sigma_2}e^{-\frac{x^2+y^2}{2\sigma_2^2}}\big) 
+\]
+\\
+\subsubsubsection{Sobel gradient processing}
+This operator uses two 3 by 3 kernels which are convoled with the original image to calculate approximations of the derivatives. If we define $A$ as the source image, and $G_x$ and $G_y$ are the two images which at each point contain the vertical and horizontal derivative approximations respectively. 
+
+\[\centering
+G_x = \begin{bmatrix} 
+    -1&0&+1\\
+    -2&0&+2\\
+    -1&0&+1\\
+    \end{bmatrix}
+    * A
+\]
+\begin{center}
+    and
+\end{center}
+\[ \centering
+ G_y = \begin{bmatrix} 
+    -1&-2&-1\\
+    0&0&0\\
+    +1&+2&+1\\
+    \end{bmatrix}
+    * A
+\]
+Since the Sobel kernels ca nbe decomposed as the products of an averaging and differentiation kernel, they compute the gradient with smoothing. At each point in the image the resulting gradient approximations can be combined to give the gradient magnitude.\footnote{For more information on this filtering technique visit \href{https://www.tutorialspoint.com/dip/sobel_operator.htm}{(link)}}
+\[
+G = \sqrt{G_x^2 + G_y^2}
+\]
+Using this we can calculate the gradients direction
+\[
+\theta = \arctan(\frac{G_y}{G_x})
+\]
