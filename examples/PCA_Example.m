@@ -51,8 +51,9 @@ Mean_Second_Col=mean(data(:,2));
 % % the relative variance for each new variable by dividing the variances according to the eigenvectors
 % % by the sum of the variances. In our example, the 1st and 2nd principal component contains 99.57 and 0.43 percent of the total variance in data.
  
-Variances=var(newdata)
-PCs_componenet=var(newdata)/sum(var(newdata))
+Variances=var(newdata);
+PCs_componenet=var(newdata)/sum(var(newdata));
+
 % 
 % Display the newdata together with the new coordinate system.
 figure
@@ -67,8 +68,8 @@ line(newdata(:,1),newdata(:,2),...
 axis equal
 
 % % Do the same experiment using the MATLAB function PCA. We get same values for newdata and variance.
-% [coeff,newdata,latend,tsd,variance] = pca(data1);
-%  newdata
-%  variance
+[coeff,newdata,latend,tsd,variance] = pca(data1);
+  newdata
+  variance
 %%The new data are decorrelated.
-% corrcoef(newdata)
+ corrcoef(newdata)
