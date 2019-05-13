@@ -109,3 +109,20 @@ Using this we can calculate the gradients direction
 \[
 \theta = \arctan(\frac{G_y}{G_x})
 \]
+\subsection{Pattern Recognition}
+Pattern Recognition is the art of automated identification of objects. 
+\subsubsection{Scale Invariant Feature Transform (SIFT)}
+This is a feature detection algorithm that is used to detect and describe local features in images. In this algorithm keypoints of the objects are first extracted to form a set of reference images and stored. An object is then recognised in a new image by individually comparing each feature from the new image to this database and finding a candidate matching the features based on the euclidean distance of their feature vectors. This algorithm composes of 5 steps.
+\begin{enumerate}
+    \item Gaussian Blurring
+    \item DoG extraction
+    \item Local Gradient Histogram
+    \item Extract Maxima, mark as key point
+    \item Key points showing orientation
+\end{enumerate}
+\subsection{Robot Vision}
+This is an area of robotics intended to give robots the ability to sense of seeing, thus making them more human like. Many algorithms can be used to achieve these attributes, however, Monte Carlo Localisation (MCL) and Simultaneous Location And Mapping (SLAM) are only discussed in this module.
+\subsubsection{Monte Carlo Localisation (MCL)}
+This algorithm is also known as particle filter localisation, and used to help robots localise there position by using a particle filter. Given a map of the environment, the algorithm estimates the position and orientation of the robot.  The algorithm starts with a uniform random distribution of particles over the space, Whenever the robot moves, it shifts the particles to predict its new state after the movement. When the robot senses something, the particles are re sampled based on a recursive Bayesian estimation. After a period of time the particles should converge towards the robots actual position. This type of algorithm is computationally expensive because it has to deal with a lot of information.
+\subsubsection{Simultaneous localization and mapping (SLAM)}
+SLAM is used when there is an unknown environment and vehicle pose, meaning that a estimate of the robot pose and map of environmental features needs to be generated simultaneously. 
