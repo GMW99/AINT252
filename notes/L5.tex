@@ -1,0 +1,60 @@
+\section{Problem Solving and Game Playing}
+Problem solving is the study of AI algorithms that try and find the sequence of actions that lead to problem solution. There are several benchmark problems/games 
+\begin{itemize}
+    \item Travelling Salesperson Problem
+    \item Missionaries and cannibals
+    \item Crypto-arithmetic
+    \item Games: Hanabi ,Starcraft2, Go, Chess and Tic-Tac-Toe
+    \item Robot navigation
+\end{itemize}
+Some of these problems have been define as complex problems our have a layer of information hiding so the agent does not know all of the information.
+\\\\
+Key terms
+\begin{itemize}
+    \item Search space: The initail set of all possible conditions that satisfy the problem constraints
+    \item Problem definition: A search tree which illustrates the initial, intermediate and goal states
+    \item Search Strategy: A way to decide the next state to expand
+\end{itemize}
+\subsection{Graphs and Search Trees}
+A graph is made of a set of nodes connected by links that may be directed or undirected, A successor is a neighbouring node that can be reached via a link, with a path being a sequence of nodes that connect two nodes together via links. A acyclic graph is a graph where no node has a path linking to itself, no cycles. Finally a tree is a type of graph where each node is connected by only one path. 
+\subsection{Problem types}
+There are two main problem types Single-state problem and Multiple-state problem. A Single-state problem is where all action consequences are known, whereas, a Multiple-state problem is when the environment is not fully accessible and only partial states are known to the agent.
+\subsubsection{To solve problems}
+To solve problems you need a set of initial conditions that will help define what a optimal and valid solution to the problem is.
+\begin{itemize}
+    \item Initial state and State space: Collection of all possible world states
+    \item Operators: actions that lead to state change
+    \item Goal test: A way to identify the goal state(s)
+    \item Path cost: A function that is assigns a cost to a particular path
+    \item Search trees: A Pathway between search states
+    \item Search Strategy: To decide the next state to expand to.
+\end{itemize}
+
+\subsection{Search Algorithms}
+There a two main types of search algorithms Blind search and Heuristic search. Blind search is and uninformed method and used where there is no information about the number of steps of the total path cost, whereas, Heuristic search is informed meaning that it is used when it is possible to know the relative cost of nodes.
+\subsubsection{Blind Search Algorithms}
+General Search algorithms are distinguished by the order in which nodes are expanded. A list that certainly is not exhaustive can be seen below.
+\begin{itemize}
+    \item Breadth-First Search: expands the shallowest node first
+    \item Depth-First Search: expands the deepest node first
+    \item Depth-Limited Search: puts a limit in the depth-first search
+    \item Uniform Cost Search: expands the least operator-cost node first
+\end{itemize}
+\subsubsection{Heuristic Search}
+For general AI a heuristic is any technique that improves the average performance on a problem solving task. A list of heuristic search algorithms that certainly is not exhaustive can be seen below.
+\begin{itemize}
+    \item Greedy Search: Best-first algorithm where the heuristic function defines the node cost.
+    \item A* Search: Greedy search and the Uniform cost algorithm.
+\end{itemize}
+\subsection{Minimax Algorithm}
+The minimax algorithm determines the optimal strategy for the \emph{Max} player by maximising its utility and assuming the  \emph{Min} player will play perfectly to minimise it.
+\\\\
+In tic-tac-toe this can be used using the two evaluating functions 
+\begin{equation}
+    3X_2 + X_1 - (3O_2+O_1)
+\end{equation}
+Where $X_n$ is the number of rows with n $X$ and no $O$.
+\begin{equation}
+    Open_{MAX} - Open_{MIN}
+\end{equation}
+Where $Open_{MAX}$ is the number of complete rows/columns/diagonals that are still open for MAX.
