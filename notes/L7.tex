@@ -1,0 +1,24 @@
+\section{Evolutionary Computation}
+Evolutionary Computation is the area of computer science interested in optimising solutions to problems that are often NP-hard, by using nature as the inspiration to for the techniques.
+\subsection{Formal definition}
+Given an optimisation problem $f(x)$, find a solution $x$ that optimises the function $f$. When the search space is simple this is not a very hard problem see figure \ref{fig:x^2}, whereas for search space is often not that nice!
+\begin{figure}[!htbp]
+    \centering
+    \begin{tikzpicture}
+      \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+      \draw[->] (0,-3) -- (0,5) node[above] {$y$};
+      \draw[scale=0.5,domain=-3:3,smooth,variable=\x,blue] plot ({\x},{\x*\x});
+    \end{tikzpicture}
+    \caption{$f(x) = x^2$}
+    \label{fig:x^2}
+\end{figure}
+\\\\
+To optimise a problem we must consider a few very important things about the solution
+\begin{itemize}
+    \item representation 
+    \item evaluation of quality
+    \item illegal solutions are not generated
+    \item they are generated from scratch
+    \item modify
+    \item a way to identify the best one
+\end{itemize}
