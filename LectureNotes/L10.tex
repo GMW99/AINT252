@@ -1,1 +1,36 @@
 \section{Turing Machines and Computability}
+A Turing Machines are an abstractions from Human computations, so for example human uses 2D sheet of paper, pencil and eraser to write and store information. The paper serves as a memory for itermediate results, the numbers written down can be  manipulated in a local context and the computations are done by a central control (brain/mind). A Turing Machine replicates this process.
+\subsection{Turing Machine Model}
+\begin{itemize}
+    \item A central control- basically an NFA
+    \item An infinite tape of discreate cells
+    \item A tape alphabet (symbols to write with) 
+    \item A read/write head that can move left/right or not
+    \item A problem written on the tape
+    \item A stopping criterion
+\end{itemize}
+With little thought you can easily see how this mimics how people solve problems with pen and paper. 
+\subsection{How the machine works}
+Informally each step the machine can read a symbol, does a transition, write back a symbol and then moves the head (or not). The epsilon transitions, readings and writings are possible therefore it is non-deterministic. A Turing machine halts immediately when it enters an accepting state and accepts whatever the original input string on the tape was. 
+\\\\
+The formal defination is as follows if we let $M = \{Q,\Gamma,b,\Sigma,\delta,q_0,F\}$ where 
+\begin{itemize}
+    \item $Q$ is a finite, non empty set of states
+    \item $\Gamma$ is a finite, non-empty set of tape alphabet symbols  
+    \item $b \in \Gamma$ is the blank symbol (the only symbol allowed to occur on the tape infinitely often at any step during the computation) 
+    \item $\Sigma \subseteq \Gamma\\\{b\}$ is finite set of input symbols ("alphabet")
+    \item $\delta$: $(Q\F)\times\Gamma\,\rightarrow\,Q\times\Gamma\times\{L,R\}$ is a partial function called the transition function, where $L$ is left shift, $R$ is right shift. (A uncommon variant allows for a "no shift" as a third element of the latter set). if $\delta$ is not defined on the current state and the current tape symbol then the system halts.
+    \item $q_0$ is a start state from $Q$
+    \item $F$ is a set of accepting states from $Q$. The initial state contents is said to be accepted by $M$ if it eventually halts in a state from $F$.
+\end{itemize} 
+\subsection{Are there more general Turing Machines}
+Adding higher dimensional tapes e.g. (2D,3D,...), using a different discrete number system e.g. (Qbits), adding more than one tape, increasing the amounts of heads or independent read/write heads doing all or any of these things does not make the model more powerful.
+\subsection{The Word Problem again}
+The word problem can be stated as such; Given a word/string/program, is it an element of a certain formal language? The word problem is decidable for type 3,2,1 languages regular expressions, context-free and context-sensitive respectively. This is quite obvious for type 3 and 2 grammars: the Non-Deterministic Finite Automaton always ends in some state for all inputs and correct syntax of a type-2 programms is decidable as are type 3.
+\subsubsection{Type 1 Word Problem}
+The type 1 word problem is also decidable as it can be recognised by lineraly bounded Turing Machines. Where initially the word is written on the tape, the machine can find and apply matching rules, meaning that replaced strings never get longer and gaps can be filled by shifting. If one ends up with the Start symbol, string can be accepted, otherwise rejected.
+\subsubsection{Type 0 Word Problem}
+Type 0 word problem is an undecidable to help the reader if 
+we state that a Turing Machine can be encoded in a binary code word $W$, a Turing Machine can therefore be called on a code of itself. So we Call $M_W$ a machine implementing $W$. So we state that the language is such that $\HP = \{W|M_W \text{called on $W$ halts} \}$. This means that the Halting Problem is the word problem for $\HP$, ie. Is there a machine that decides its language? Alan Turing has shown that this is not possible.
+\subsubsubsection{The Halting Problem is Undecidable}
+To prove this if we let state that $HP$ is decidable this means that there exists a Turing Machine $M$ that decides it.
