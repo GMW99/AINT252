@@ -257,6 +257,20 @@ If $P$ is a PDA where $\mathscr{L}(P)=L$, we say $P$ recognises $L$.\footnote{It
 \subsection{Beyond Context-Free Grammars}
 In regular and context-free languages the left hand side of a production is always a single syntactic variable, more generally this could indeed be any finite, non empty string of variables and terminals e.g. $aBc \rightarrow uVwXy$. Leading to context-sensitive languages if the strings never get shorter under a rule and to Phrase-Structure Grammars if they can shrink e.g. $aBc \rightarrow uV$
 \subsubsection{Chomsky Hierarchy}
-Regular, context-free, context-sensitive and phrase structure languages form a hierarchy by proper set inclusion, the Chomsky Hierarchy
-
-
+Regular, context-free, context-sensitive and phrase structure languages form a hierarchy by proper set inclusion, the Chomsky Hierarchy.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width = 0.7\textwidth]{Images/ChomskyHierarchy.PNG}
+    \caption{Chomsky Hierarchy}
+    \label{fig:ChomskyHierarchy}
+\end{figure}
+\subsubsection{Turing Machines}
+Context-sensitive and phrase-structure languages can be recognised by Turing machines. A Turing machine is basically an Non-Deterministic Finite Automaton with two sided tape, where more tapes do not increase the power. The Turing machine can compute "everything" that is computable with discrete states.
+\subsection{Summary}
+\begin{itemize}
+    \item RegExp are truly useful in programming
+    \item  Formal languages and grammars are truly useful to understand what computers can do
+    \item RegExp, DFAs, NFAs & regular grammars all exactly correspond with regular languages
+    \item Context-free grammars exactly correspond with Non-Deterministic Pushdown Automata
+    \item Formal Languages form the Chomsky Hierarchy
+\end{itemize}
