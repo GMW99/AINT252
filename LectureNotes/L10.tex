@@ -31,6 +31,21 @@ The word problem can be stated as such; Given a word/string/program, is it an el
 The type 1 word problem is also decidable as it can be recognised by lineraly bounded Turing Machines. Where initially the word is written on the tape, the machine can find and apply matching rules, meaning that replaced strings never get longer and gaps can be filled by shifting. If one ends up with the Start symbol, string can be accepted, otherwise rejected.
 \subsubsection{Type 0 Word Problem}
 Type 0 word problem is an undecidable to help the reader if 
-we state that a Turing Machine can be encoded in a binary code word $W$, a Turing Machine can therefore be called on a code of itself. So we Call $M_W$ a machine implementing $W$. So we state that the language is such that $\HP = \{W|M_W \text{called on $W$ halts} \}$. This means that the Halting Problem is the word problem for $\HP$, ie. Is there a machine that decides its language? Alan Turing has shown that this is not possible.
+we state that a Turing Machine can be encoded in a binary code word $W$, a Turing Machine can therefore be called on a code of itself. So we Call $M_W$ a machine implementing $W$. So we state that the language is such that $HP = \{W|M_W \text{called on $W$ halts} \}$. This means that the Halting Problem is the word problem for $HP$, ie. Is there a machine that decides its language? Alan Turing has shown that this is not possible.
 \subsubsubsection{The Halting Problem is Undecidable}
-To prove this if we let state that $HP$ is decidable this means that there exists a Turing Machine $M$ that decides it.
+To prove this if we let state that $HP$ is decidable this means that there exists a Turing Machine $M$ that decides it. Now Construct another machine $M\prime$ that computes $M\prime(x)$: if $M(x)$ ? Loop forever: Stop. Let $w\prime$ encode $M\prime$. If $M\prime(w\prime)$ halts not it is not in $HP$ by definition of $HP$. Therefore, $M(w\prime)$ would output False and $M\prime(w\prime)$ would stop according to the code. Meaning that it would be in $HP$ therefore a contradiction. 
+\\\\
+This means that not all problems can be algorithmically solved and not all functions can be implemented.
+\subsection{Not everything can be proven} 
+Axiomatic Mathematics formulates Maths in formal terms for arithmetic and logic, so ideally, logical inference should the be able to prove every possible theorem. Howeverm this is not the case a for every sufficiently complex formal system there will remain theorems unprovable within the realm of the system.
+\subsection{Church Turing Thesis}
+The Church Turing thesis (conjecture) states that a function on natural numbers is computable by a human being following an algorithm, ignoring resources limitations, if and only if it is computable by a Turing machine. The Turing Machine formalises the intuitive understanding of what Computations or Algorithms are. 
+\subsection{How About Non-integer Numbers}
+Some real numbers can be computed to arbitray precision by a Turing Machine, e.g. all integers, irrational numbers, pi or e. Their number is almost vanishing compared to the about of real numbers; Real numbers are not computable on paper (Church-Turing). A (physically realisable) machine model that computes with reals has yet to be invented, there are hyper-Turing models however, but undecidability persists and there may not be realisable ones.
+\subsection{Computability vs Complexity}
+Computability only implies that something can be computed in effect, not that there are efficient algorithms. Algorithmic complexity theory considers the efficiency of algorithms; how fast they are.
+\subsection{Summary}
+\begin{itemize}
+    \item The Turing machine is a universal Model of Computations (Church-Turing Theorem)
+    \item Not everything is decidable or can be computed (Maths is incomplete (Goedel))    
+\end{itemize}
