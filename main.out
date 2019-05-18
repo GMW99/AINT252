@@ -1,0 +1,114 @@
+\BOOKMARK [1][-]{section.1}{Introduction Lecture}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Introduction to AI}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Natural AI}{section.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Biological Neuron}{subsection.1.2}% 4
+\BOOKMARK [2][-]{subsection.1.3}{Formal Neural Network}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.4}{Learning}{section.1}% 6
+\BOOKMARK [1][-]{section.2}{Theoretical basis of AI}{}% 7
+\BOOKMARK [2][-]{subsection.2.1}{AI algorithms for classification}{section.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.1.1}{What a computer can see}{subsection.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.2}{Data pre-processing}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.3}{Normal distribution}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.4}{Bivariate normal distribution }{section.2}% 12
+\BOOKMARK [2][-]{subsection.2.5}{Statistics: Random sample}{section.2}% 13
+\BOOKMARK [2][-]{subsection.2.6}{Parameter estimators}{section.2}% 14
+\BOOKMARK [2][-]{subsection.2.7}{Data Centering}{section.2}% 15
+\BOOKMARK [2][-]{subsection.2.8}{Data normalisation}{section.2}% 16
+\BOOKMARK [2][-]{subsection.2.9}{Dimensionality reduction: Principal Component Analysis \(PCA\)}{section.2}% 17
+\BOOKMARK [2][-]{subsection.2.10}{Classify images}{section.2}% 18
+\BOOKMARK [2][-]{subsection.2.11}{Binary \(two classes\) classification}{section.2}% 19
+\BOOKMARK [2][-]{subsection.2.12}{Linear Regression}{section.2}% 20
+\BOOKMARK [3][-]{subsubsection.2.12.1}{Least squares}{subsection.2.12}% 21
+\BOOKMARK [2][-]{subsection.2.13}{Numerical optimization}{section.2}% 22
+\BOOKMARK [3][-]{subsubsection.2.13.1}{Gradient descent}{subsection.2.13}% 23
+\BOOKMARK [4][-]{subsubsubsection.2.13.1.1}{Multivariable calculus: gradient}{subsubsection.2.13.1}% 24
+\BOOKMARK [3][-]{subsubsection.2.13.2}{Higher dimensional Newton-Raphson}{subsection.2.13}% 25
+\BOOKMARK [4][-]{subsubsubsection.2.13.2.1}{Example}{subsubsection.2.13.2}% 26
+\BOOKMARK [1][-]{section.3}{Clustering}{}% 27
+\BOOKMARK [2][-]{subsection.3.1}{Data Clustering}{section.3}% 28
+\BOOKMARK [2][-]{subsection.3.2}{Hierarchical Clustering}{section.3}% 29
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Linkage}{subsection.3.2}% 30
+\BOOKMARK [4][-]{subsubsubsection.3.2.1.1}{Nearest-neighbour}{subsubsection.3.2.1}% 31
+\BOOKMARK [4][-]{subsubsubsection.3.2.1.2}{Furthest-neighbour}{subsubsection.3.2.1}% 32
+\BOOKMARK [4][-]{subsubsubsection.3.2.1.3}{Average linkage}{subsubsection.3.2.1}% 33
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Dendrogram}{subsection.3.2}% 34
+\BOOKMARK [4][-]{subsubsubsection.3.2.2.1}{Where should we cut a tree}{subsubsection.3.2.2}% 35
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Similarity}{subsection.3.2}% 36
+\BOOKMARK [4][-]{subsubsubsection.3.2.3.1}{Euclidean Distance}{subsubsection.3.2.3}% 37
+\BOOKMARK [4][-]{subsubsubsection.3.2.3.2}{Squared Euclidean Distance}{subsubsection.3.2.3}% 38
+\BOOKMARK [4][-]{subsubsubsection.3.2.3.3}{Cosine similarity}{subsubsection.3.2.3}% 39
+\BOOKMARK [4][-]{subsubsubsection.3.2.3.4}{Manhattan Block}{subsubsection.3.2.3}% 40
+\BOOKMARK [2][-]{subsection.3.3}{Cluster Analysis}{section.3}% 41
+\BOOKMARK [2][-]{subsection.3.4}{K-means: Non-hierarchical clustering}{section.3}% 42
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Silhouette}{subsection.3.4}% 43
+\BOOKMARK [3][-]{subsubsection.3.4.2}{What to bear in mind}{subsection.3.4}% 44
+\BOOKMARK [2][-]{subsection.3.5}{K Nearest Neighbour \(KNN\) Classifier}{section.3}% 45
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Algorithm summary}{subsection.3.5}% 46
+\BOOKMARK [3][-]{subsubsection.3.5.2}{Features of KNN}{subsection.3.5}% 47
+\BOOKMARK [3][-]{subsubsection.3.5.3}{Pros and cons of KNN}{subsection.3.5}% 48
+\BOOKMARK [1][-]{section.4}{Supervised Learning}{}% 49
+\BOOKMARK [2][-]{subsection.4.1}{Perceptron}{section.4}% 50
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Learning rule: training perceptron}{subsection.4.1}% 51
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Example}{subsection.4.1}% 52
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Limitations}{subsection.4.1}% 53
+\BOOKMARK [2][-]{subsection.4.2}{Multilayer Perceptron}{section.4}% 54
+\BOOKMARK [3][-]{subsubsection.4.2.1}{ANN: forward pass}{subsection.4.2}% 55
+\BOOKMARK [3][-]{subsubsection.4.2.2}{ANN: backward pass \(error estimation\)}{subsection.4.2}% 56
+\BOOKMARK [3][-]{subsubsection.4.2.3}{ANN: backward pass \(update rule\)}{subsection.4.2}% 57
+\BOOKMARK [3][-]{subsubsection.4.2.4}{Activation functions}{subsection.4.2}% 58
+\BOOKMARK [4][-]{subsubsubsection.4.2.4.1}{Sigmoid activation function}{subsubsection.4.2.4}% 59
+\BOOKMARK [3][-]{subsubsection.4.2.5}{ANN with hidden layers}{subsection.4.2}% 60
+\BOOKMARK [2][-]{subsection.4.3}{Support Vector Machine Binary Classifier}{section.4}% 61
+\BOOKMARK [3][-]{subsubsubsection.4.3.0.1}{SVM as Nonlinear classifier's }{subsection.4.3}% 62
+\BOOKMARK [1][-]{section.5}{Problem Solving and Game Playing}{}% 63
+\BOOKMARK [2][-]{subsection.5.1}{Graphs and Search Trees}{section.5}% 64
+\BOOKMARK [2][-]{subsection.5.2}{Problem types}{section.5}% 65
+\BOOKMARK [3][-]{subsubsection.5.2.1}{To solve problems}{subsection.5.2}% 66
+\BOOKMARK [2][-]{subsection.5.3}{Search Algorithms}{section.5}% 67
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Blind Search Algorithms}{subsection.5.3}% 68
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Heuristic Search}{subsection.5.3}% 69
+\BOOKMARK [2][-]{subsection.5.4}{Minimax Algorithm}{section.5}% 70
+\BOOKMARK [1][-]{section.6}{Evolutionary Computation}{}% 71
+\BOOKMARK [2][-]{subsection.6.1}{Formal definition}{section.6}% 72
+\BOOKMARK [1][-]{section.7}{Computer Vision}{}% 73
+\BOOKMARK [2][-]{subsection.7.1}{Image Processing}{section.7}% 74
+\BOOKMARK [3][-]{subsubsection.7.1.1}{Convolution}{subsection.7.1}% 75
+\BOOKMARK [4][-]{subsubsubsection.7.1.1.1}{Discrete Convolution}{subsubsection.7.1.1}% 76
+\BOOKMARK [3][-]{subsubsection.7.1.2}{Spatial filtering}{subsection.7.1}% 77
+\BOOKMARK [4][-]{subsubsubsection.7.1.2.1}{Difference of two Gaussians \(DoG\)}{subsubsection.7.1.2}% 78
+\BOOKMARK [4][-]{subsubsubsection.7.1.2.2}{Sobel gradient processing}{subsubsection.7.1.2}% 79
+\BOOKMARK [2][-]{subsection.7.2}{Pattern Recognition}{section.7}% 80
+\BOOKMARK [3][-]{subsubsection.7.2.1}{Scale Invariant Feature Transform \(SIFT\)}{subsection.7.2}% 81
+\BOOKMARK [2][-]{subsection.7.3}{Robot Vision}{section.7}% 82
+\BOOKMARK [3][-]{subsubsection.7.3.1}{Monte Carlo Localisation \(MCL\)}{subsection.7.3}% 83
+\BOOKMARK [3][-]{subsubsection.7.3.2}{Simultaneous localization and mapping \(SLAM\)}{subsection.7.3}% 84
+\BOOKMARK [1][-]{section.8}{Formal Languages and Automata}{}% 85
+\BOOKMARK [2][-]{subsection.8.1}{Regular Expressions}{section.8}% 86
+\BOOKMARK [3][-]{subsubsection.8.1.1}{Generalised Regular Expressions}{subsection.8.1}% 87
+\BOOKMARK [2][-]{subsection.8.2}{Deterministic Finite State Automata \(DFA\)}{section.8}% 88
+\BOOKMARK [3][-]{subsubsection.8.2.1}{Transition Function}{subsection.8.2}% 89
+\BOOKMARK [3][-]{subsubsection.8.2.2}{Example of what the symbols mean}{subsection.8.2}% 90
+\BOOKMARK [3][-]{subsubsection.8.2.3}{How a DFA Works}{subsection.8.2}% 91
+\BOOKMARK [3][-]{subsubsection.8.2.4}{Informal definition}{subsection.8.2}% 92
+\BOOKMARK [3][-]{subsubsection.8.2.5}{Pseudo code}{subsection.8.2}% 93
+\BOOKMARK [2][-]{subsection.8.3}{Non-Deterministic Finite State Automata \(NFA\)}{section.8}% 94
+\BOOKMARK [3][-]{subsubsection.8.3.1}{NFA example}{subsection.8.3}% 95
+\BOOKMARK [2][-]{subsection.8.4}{Formal Languages}{section.8}% 96
+\BOOKMARK [3][-]{subsubsection.8.4.1}{Equivalence \(without proofs\)}{subsection.8.4}% 97
+\BOOKMARK [3][-]{subsubsection.8.4.2}{Grammars and Languages}{subsection.8.4}% 98
+\BOOKMARK [4][-]{subsubsubsection.8.4.2.1}{Regular Grammars}{subsubsection.8.4.2}% 99
+\BOOKMARK [3][-]{subsubsection.8.4.3}{Limits of Regular Languages}{subsection.8.4}% 100
+\BOOKMARK [2][-]{subsection.8.5}{Context-Free Grammars}{section.8}% 101
+\BOOKMARK [3][-]{subsubsection.8.5.1}{Example Toy Language}{subsection.8.5}% 102
+\BOOKMARK [3][-]{subsubsection.8.5.2}{Example anbN}{subsection.8.5}% 103
+\BOOKMARK [3][-]{subsubsection.8.5.3}{Pushdown Automaton}{subsection.8.5}% 104
+\BOOKMARK [3][-]{subsubsection.8.5.4}{Transition Function}{subsection.8.5}% 105
+\BOOKMARK [3][-]{subsubsection.8.5.5}{NPDA for anbn}{subsection.8.5}% 106
+\BOOKMARK [3][-]{subsubsection.8.5.6}{NPDA for Arithmetic}{subsection.8.5}% 107
+\BOOKMARK [3][-]{subsubsection.8.5.7}{The Language of a PDA}{subsection.8.5}% 108
+\BOOKMARK [2][-]{subsection.8.6}{What does this all mean for Computing}{section.8}% 109
+\BOOKMARK [2][-]{subsection.8.7}{Beyond Context-Free Grammars}{section.8}% 110
+\BOOKMARK [3][-]{subsubsection.8.7.1}{Chomsky Hierarchy}{subsection.8.7}% 111
+\BOOKMARK [3][-]{subsubsection.8.7.2}{Turing Machines}{subsection.8.7}% 112
+\BOOKMARK [2][-]{subsection.8.8}{Summary}{section.8}% 113
+\BOOKMARK [1][-]{section.9}{Turing Machines and Computability}{}% 114
